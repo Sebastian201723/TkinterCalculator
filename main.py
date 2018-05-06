@@ -1,10 +1,13 @@
+#------------------------------------------
+#Author: Sebastian Cajas Ordonez
+#------------------------------------------
 from Tkinter import *
 
 raiz = Tk()
 
 miFrame = Frame(raiz)
 miFrame.pack()
-
+#Variable to separate numbers from operators
 operacion = ""
 
 resultado = 0.0
@@ -25,13 +28,13 @@ def numeroPulsado(num):
 	global operacion
 
 	global reset_pantalla
-
+#If any operator's been pushed then:
 	if reset_pantalla!=False:
 
 		numeroPantalla.set(num)
 
 		reset_pantalla=False
-
+#otherwise: Concatenate every pushed number on screen
 	else:
 	
 		numeroPantalla.set(numeroPantalla.get() + num)
@@ -70,6 +73,7 @@ def resta(num):
 		num1=int(num)
 
 		resultado=num1
+		#To avoid a negative number
 
 	else:
 
